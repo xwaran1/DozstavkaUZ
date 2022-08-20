@@ -6,7 +6,6 @@ class DetaillPage extends StatefulWidget {
   @override
   State<DetaillPage> createState() => _DetaillPageState();
 }
-
 class _DetaillPageState extends State<DetaillPage> {
   @override
   Widget build(BuildContext context) {
@@ -16,9 +15,38 @@ class _DetaillPageState extends State<DetaillPage> {
           appBar: AppBar(
             title: Text('Доставка еды'),
             centerTitle: true,
+            bottom: TabBar(
+              tabs: [
+                Container(
+                  child: Text('Fruit'),
+                ),
+                Container(
+                  child: Text('Eat'),
+                ),
+                Container(
+                  child: Text('Juice'),
+                )
+              ],
+            ),
+
+          ),
+          body: Column(
+            children: [
+              Container(
+                color: Colors.red,
+                height: 100,
+              ),
+              Container(
+                color: Colors.blue,
+                height: 100,
+              ),
+              Container(
+                color: Colors.yellow,
+                height: 100,
+              )
+            ],
           ),
         )
-
     );
   }
 }

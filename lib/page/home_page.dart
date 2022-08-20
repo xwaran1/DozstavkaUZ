@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:untitled1/page/detaill_page.dart';
 class HomePage extends StatefulWidget {
@@ -9,54 +7,49 @@ class HomePage extends StatefulWidget {
   @override
   State<HomePage> createState() => _HomePageState();
 }
-
 class _HomePageState extends State<HomePage> {
-
-  var isLoggedIn = true;
-  _initTimer(){
-    Timer(Duration(seconds: 5), () {
-      if (isLoggedIn){
-       Navigator.pushReplacementNamed(context, DetaillPage.id);
-      }else{
-
-      }
-    });
-  }
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    _initTimer();
-  }
   
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Национальные блюда Узбекистана',
+            style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,fontFamily: 'Billabong'),
+        ),
+        centerTitle: true,
+      ),
       body: Container(
         padding: EdgeInsets.all(50),
-        color: Colors.white,
+        color: Colors.grey,
         child: Stack(
           children: [
             Center(
-                child:Image.network('https://darakchi.uz/storage/f9/00/c6/63523/conversions/zv3QoKB-HnKI9HJvcVsFCPP4XA_yN4QQ-xl.jpg',
-              height: 100,
-              width: 100,)),
-            Container(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Center(
-                    child: Text('Доставка еды'),
+                child:Image.asset('assets/images/img1.png',
+                  fit: BoxFit.cover,
+              )),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  margin: EdgeInsets.only(left: 50,top: 450,bottom: 0,right: 0),
+                  child:RaisedButton(
+                    padding: EdgeInsets.symmetric(horizontal: 70,),
+                    elevation: 20,
+                    child: Text('Click me',style: TextStyle(fontSize: 30,fontFamily: 'Billabong')),
+                      color: Colors.blue,
+                    onPressed: (){
+                      Navigator.pushNamed(context, DetaillPage.id);
+                    },
                   )
+                ),
+              ],
+            )
                 ],
               ),
-            )
 
-          ],
-        ),
-      ),
-
-    );
+            ),
+      
+        );
   }
 }

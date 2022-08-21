@@ -18,35 +18,35 @@ class _DetaillPageState extends State<DetaillPage> {
             bottom: TabBar(
               tabs: [
                 Container(
-                  child: Text('Fruit'),
+                  child: Image.asset('assets/images/img3.png'),
+                  width: 70,
                 ),
                 Container(
-                  child: Text('Eat'),
+                  child: Image.asset('assets/images/img4.png'),
+                  width: 70,
                 ),
                 Container(
-                  child: Text('Juice'),
+                  child: Image.asset('assets/images/img6.png'),
+                  width: 40,
                 )
               ],
-            ),
+            )
 
           ),
-          body: Column(
+          body: TabBarView(
             children: [
-              Container(
-                color: Colors.red,
-                height: 100,
-              ),
-              Container(
-                color: Colors.blue,
-                height: 100,
-              ),
+            Container(
+              color: Colors.red,
+            ),
               Container(
                 color: Colors.yellow,
-                height: 100,
-              )
+              ),
+              Container(color: Colors.green,)
             ],
-          ),
-        )
-    );
+          ),    )
+
+          );
+
+
   }
 }
